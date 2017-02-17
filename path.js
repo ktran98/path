@@ -1,35 +1,42 @@
 //Your code below
-function buildPath(p, n){
-let path = [];
-  for(f=0;f<n;f++){
-    let r = Math.random();
-    if(r<=p){
-      path[f] = false
-    }
-    else{
-      path[f] = true
-    }
-    path[f] = true
-    return path[f]
+function buildPath(p,n){
+ let path = [];
+ for(x=0;x<n;x++){
+  let r = Math.random();
+  if(r <= p){
+   path[x] = false;
   }
+  else{
+     path[x] = true;
+  }
+}
+path[x] = true;
+  return path[x];
+ }
 
-function stroll(path, index){
-  if(){
-    path = true
-    return path = 1
-  }
-  if(){
-    path = false
-    return path = 0
-  }
-  else if(){
-    return path = path+1;
+function stroll(path,index){
+if(index == path.length){
+  return 1;
+ }
+else if(index > path.length){
+  return 0;
+ }
+else{
+  return stroll(path,index+1);
   }
 }
 
-function rsj(run, skip, jump){
-  
-}
+function rsj(path,index){
+if(index == path-1){
+  return 1;
+  }
+else if(index > path-1){
+  return 0;
+ }
+else{
+  return rsj(path,index+1) + rsj(path,index+2) + rsj(path,index+5);
+    }
+  }
 //Test code
 let testpath1 = buildPath(0.10,15);
 let testpath2 = buildPath(0.50,15);
